@@ -69,6 +69,8 @@ struct ContentView: View {
                         .cornerRadius(10)
                     Button(action: {
                         addItem()
+                        task = ""
+                        hideKeyboard()
                     }, label: {
                         Spacer()
                         Text("SAVE")
@@ -78,7 +80,7 @@ struct ContentView: View {
                     .disabled(isButtonDisabled)
                     .font(.headline)
                     .foregroundColor(.white)
-                    .background(Color.pink.cornerRadius(8))
+                    .background(isButtonDisabled ? Color.gray.cornerRadius(8) : Color.pink.cornerRadius(8))
                 } //: VStack
                 .padding()
                 
