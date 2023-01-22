@@ -9,6 +9,12 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    init() {
+        UICollectionView.appearance().backgroundColor = .clear
+        UICollectionReusableView.appearance().backgroundColor = .clear
+    }
+
     // MARK: - PROPERTIES
     
     @State var task: String = ""
@@ -60,61 +66,76 @@ struct ContentView: View {
     // MARK: - BODY
     var body: some View {
         NavigationView {
-            VStack {
-                
-                VStack(spacing: 16){
-                    TextField("New Task", text: $task)
+            ZStack {
+                VStack {
+                    
+                    VStack(spacing: 16){
+                        TextField("New Task", text: $task)
+                            .padding()
+                            .background(Color(UIColor.systemGray6))
+                            .cornerRadius(10)
+                        Button(action: {
+                            addItem()
+                            task = ""
+                            hideKeyboard()
+                        }, label: {
+                            Spacer()
+                            Text("SAVE")
+                            Spacer()
+                        })
                         .padding()
-                        .background(Color(UIColor.systemGray6))
-                        .cornerRadius(10)
-                    Button(action: {
-                        addItem()
-                        task = ""
-                        hideKeyboard()
-                    }, label: {
-                        Spacer()
-                        Text("SAVE")
-                        Spacer()
-                    })
+                        .disabled(isButtonDisabled)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .background(isButtonDisabled ? Color.gray : Color.pink)
+                        .cornerRadius(8)
+                    } //: VStack
                     .padding()
-                    .disabled(isButtonDisabled)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .background(isButtonDisabled ? Color.gray : Color.pink)
-                    .cornerRadius(8)
-                } //: VStack
-                .padding()
-                
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
+                    
+                    List {
+                        ForEach(items) { item in
+                            NavigationLink(destination: {
+                                
                                 Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                    
-                        } label: {
-                            VStack {
-                                Text(item.task ?? "")
-                                    .font(.headline)
-                                Text(item.timestamp!, formatter: itemFormatter)
-                                    .font(.footnote)
-                                    .foregroundColor(.gray)
-                            } //: VStack
+                                
+                            }){
+                                VStack {
+                                    Text(item.task ?? "")
+                                        .font(.headline)
+                                    Text(item.timestamp!, formatter: itemFormatter)
+                                        .font(.footnote)
+                                        .foregroundColor(.gray)
+                                } //: VStack
+                            }
+                           // .listRowBackground(Color.clear)
                         }
-                    }
-                    .onDelete(perform: deleteItems)
-                } //: LIST
-            } //: VStack
+                        .onDelete(perform: deleteItems)
+                        
+                    } //: LIST
+                    .listStyle(InsetGroupedListStyle())
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+                    .padding(.vertical, 0)
+                    .frame(maxWidth: 640)
+                } //: VStack
+                
+            } //: ZSTACK
+            .onAppear(){
+                UICollectionView.appearance().backgroundColor = .clear
+            }
             .navigationBarTitle("Daily Tasks", displayMode: .large)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
             } //: toolbar
+            .background(
+                BackgroundImageView()
+            )
+            .background(
+                backgroundGradient.ignoresSafeArea(.all)
+            )
         } //: NAVIGATION
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

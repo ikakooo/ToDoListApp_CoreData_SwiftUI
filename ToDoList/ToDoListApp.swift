@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct ToDoListApp: App {
+    
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

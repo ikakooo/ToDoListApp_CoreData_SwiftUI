@@ -12,6 +12,9 @@
 		334D7B382979592200DA32D3 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B352979592200DA32D3 /* sound-rise.mp3 */; };
 		3356E5AD297A718A0024866D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356E5AC297A718A0024866D /* Constant.swift */; };
 		33B1E9BF297D21D40093F8DE /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1E9BE297D21D40093F8DE /* HideKeyboardExtension.swift */; };
+		33B1E9C4297DCA4B0093F8DE /* ViewColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1E9C3297DCA4B0093F8DE /* ViewColorExtension.swift */; };
+		33B1E9C7297DD3110093F8DE /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 33B1E9C6297DD3110093F8DE /* Introspect */; };
+		33B1E9C9297DEA260093F8DE /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1E9C8297DEA260093F8DE /* BackgroundImageView.swift */; };
 		33D184402977E72600B9C9A8 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1843F2977E72600B9C9A8 /* ToDoListApp.swift */; };
 		33D184422977E72600B9C9A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D184412977E72600B9C9A8 /* ContentView.swift */; };
 		33D184442977E72800B9C9A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D184432977E72800B9C9A8 /* Assets.xcassets */; };
@@ -47,6 +50,8 @@
 		334D7B3F29795BD000DA32D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3356E5AC297A718A0024866D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		33B1E9BE297D21D40093F8DE /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		33B1E9C3297DCA4B0093F8DE /* ViewColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewColorExtension.swift; sourceTree = "<group>"; };
+		33B1E9C8297DEA260093F8DE /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		33D1843C2977E72600B9C9A8 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D1843F2977E72600B9C9A8 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		33D184412977E72600B9C9A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B1E9C7297DD3110093F8DE /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				33D184412977E72600B9C9A8 /* ContentView.swift */,
+				33B1E9C8297DEA260093F8DE /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				33B1E9BE297D21D40093F8DE /* HideKeyboardExtension.swift */,
+				33B1E9C3297DCA4B0093F8DE /* ViewColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -214,6 +222,9 @@
 			dependencies = (
 			);
 			name = ToDoList;
+			packageProductDependencies = (
+				33B1E9C6297DD3110093F8DE /* Introspect */,
+			);
 			productName = ToDoList;
 			productReference = 33D1843C2977E72600B9C9A8 /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +297,9 @@
 				Base,
 			);
 			mainGroup = 33D184332977E72600B9C9A8;
+			packageReferences = (
+				33B1E9C5297DD3110093F8DE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 33D1843D2977E72600B9C9A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,6 +347,8 @@
 			files = (
 				33D184492977E72800B9C9A8 /* Persistence.swift in Sources */,
 				33D184422977E72600B9C9A8 /* ContentView.swift in Sources */,
+				33B1E9C9297DEA260093F8DE /* BackgroundImageView.swift in Sources */,
+				33B1E9C4297DCA4B0093F8DE /* ViewColorExtension.swift in Sources */,
 				33B1E9BF297D21D40093F8DE /* HideKeyboardExtension.swift in Sources */,
 				3356E5AD297A718A0024866D /* Constant.swift in Sources */,
 				33D184402977E72600B9C9A8 /* ToDoListApp.swift in Sources */,
@@ -495,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoList/Preview Content\"";
+				DEVELOPMENT_TEAM = J4383386FU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoList/Info.plist;
@@ -524,6 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoList/Preview Content\"";
+				DEVELOPMENT_TEAM = J4383386FU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoList/Info.plist;
@@ -657,6 +675,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33B1E9C5297DD3110093F8DE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33B1E9C6297DD3110093F8DE /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33B1E9C5297DD3110093F8DE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		33D1844A2977E72800B9C9A8 /* ToDoList.xcdatamodeld */ = {
