@@ -80,7 +80,8 @@ struct ContentView: View {
                     .disabled(isButtonDisabled)
                     .font(.headline)
                     .foregroundColor(.white)
-                    .background(isButtonDisabled ? Color.gray.cornerRadius(8) : Color.pink.cornerRadius(8))
+                    .background(isButtonDisabled ? Color.gray : Color.pink)
+                    .cornerRadius(8)
                 } //: VStack
                 .padding()
                 
