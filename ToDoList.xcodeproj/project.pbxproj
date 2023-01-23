@@ -11,6 +11,7 @@
 		334D7B372979592200DA32D3 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B342979592100DA32D3 /* sound-ding.mp3 */; };
 		334D7B382979592200DA32D3 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B352979592200DA32D3 /* sound-rise.mp3 */; };
 		3356E5AD297A718A0024866D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356E5AC297A718A0024866D /* Constant.swift */; };
+		33808477297EA33F00634E4F /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33808476297EA33F00634E4F /* NewTaskItemView.swift */; };
 		33B1E9BF297D21D40093F8DE /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1E9BE297D21D40093F8DE /* HideKeyboardExtension.swift */; };
 		33B1E9C4297DCA4B0093F8DE /* ViewColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1E9C3297DCA4B0093F8DE /* ViewColorExtension.swift */; };
 		33B1E9C7297DD3110093F8DE /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 33B1E9C6297DD3110093F8DE /* Introspect */; };
@@ -49,6 +50,7 @@
 		334D7B352979592200DA32D3 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		334D7B3F29795BD000DA32D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3356E5AC297A718A0024866D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		33808476297EA33F00634E4F /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
 		33B1E9BE297D21D40093F8DE /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		33B1E9C3297DCA4B0093F8DE /* ViewColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewColorExtension.swift; sourceTree = "<group>"; };
 		33B1E9C8297DEA260093F8DE /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				33D184412977E72600B9C9A8 /* ContentView.swift */,
 				33B1E9C8297DEA260093F8DE /* BackgroundImageView.swift */,
+				33808476297EA33F00634E4F /* NewTaskItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				33B1E9BF297D21D40093F8DE /* HideKeyboardExtension.swift in Sources */,
 				3356E5AD297A718A0024866D /* Constant.swift in Sources */,
 				33D184402977E72600B9C9A8 /* ToDoListApp.swift in Sources */,
+				33808477297EA33F00634E4F /* NewTaskItemView.swift in Sources */,
 				33D1844C2977E72800B9C9A8 /* ToDoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
