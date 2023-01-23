@@ -17,6 +17,7 @@ struct ContentView: View {
     
     // MARK: - PROPERTIES
     
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State var task: String = ""
     @State private var showNewTaskItem: Bool = false
     
@@ -54,6 +55,33 @@ struct ContentView: View {
                 
                 ZStack {
                     VStack {
+                        
+                        HStack {
+                            // TITLE
+                            Text("Just Do It!")
+                                .font(.system(.largeTitle, design: .rounded))
+                                .fontWeight(.heavy)
+                                .padding()
+                            Spacer()
+                            // EDIT BUTTON
+                            EditButton()
+                                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                .padding(.horizontal, 10)
+                                .frame(minWidth: 70, minHeight: 24)
+                                .background(Capsule().stroke(Color.white, lineWidth: 2))
+                            // Appearence Button
+                            Button(action: {
+                                isDarkMode.toggle()
+                            }, label: {
+                                Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .font(.system(.title, design: .rounded))
+                            })
+                            .padding()
+                        }
+                        .foregroundColor(.white)
+                        
                         Spacer(minLength: 30)
                         Button(action: {
                             showNewTaskItem = true
@@ -114,7 +142,7 @@ struct ContentView: View {
                             }
                         
                         NewTaskItemView( showNewTaskItem: $showNewTaskItem)
-                           
+                        
                     }
                     
                 } //: ZSTACK
@@ -122,6 +150,7 @@ struct ContentView: View {
                     UICollectionView.appearance().backgroundColor = .clear
                 }
                 .navigationBarTitle("Just Do It!", displayMode: .large)
+                .navigationBarHidden(true)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
