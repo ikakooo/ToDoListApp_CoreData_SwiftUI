@@ -39,7 +39,8 @@ struct NewTaskItemView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+          Spacer()
+                
             VStack(spacing: 16){
                 TextField("New Task", text: $task)
                     .foregroundColor(.pink)
@@ -71,6 +72,7 @@ struct NewTaskItemView: View {
             .frame(maxWidth: 640)
         }
         .padding()
+        
     }
 }
 

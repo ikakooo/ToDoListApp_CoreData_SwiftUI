@@ -33,23 +33,6 @@ struct ContentView: View {
     
     // MARK: - FUNCTIONS
     
-    //    private func addItem() {
-    //        withAnimation {
-    //            let newItem = Item(context: viewContext)
-    //            newItem.task = task
-    //            newItem.timestamp = Date()
-    //            newItem.completion = false
-    //            newItem.id = UUID()
-    //
-    //            do {
-    //                try viewContext.save()
-    //            } catch {
-    //                let nsError = error as NSError
-    //                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-    //            }
-    //        }
-    //    }
-    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -71,7 +54,7 @@ struct ContentView: View {
                 
                 ZStack {
                     VStack {
-                        
+                        Spacer(minLength: 30)
                         Button(action: {
                             showNewTaskItem = true
                         }, label: {
@@ -80,7 +63,7 @@ struct ContentView: View {
                                 Image(systemName: "plus.circle")
                                     .resizable()
                                     .foregroundColor(.white)
-                                    .frame(width: 20, height: 20)
+                                    .frame(width: 40, height: 40)
                                 Spacer()
                                     .frame(maxWidth: 20)
                                 Text("ADD TASK")
@@ -89,34 +72,13 @@ struct ContentView: View {
                             }
                             .padding(.vertical)
                             .padding(.horizontal, 40)
-                            .background(Color(UIColor.green).cornerRadius(10))
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .leading, endPoint: .trailing)
+                                .clipShape(Capsule())
+                            )
+                            .cornerRadius(10)
+                            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12, x: 0.0, y: 4.0)
                             Spacer()
                         })
-                        
-                        
-                        
-                        //                    VStack(spacing: 16){
-                        //                        TextField("New Task", text: $task)
-                        //                            .padding()
-                        //                            .background(Color(UIColor.systemGray6))
-                        //                            .cornerRadius(10)
-                        //                        Button(action: {
-                        //                            addItem()
-                        //                            task = ""
-                        //                            hideKeyboard()
-                        //                        }, label: {
-                        //                            Spacer()
-                        //                            Text("SAVE")
-                        //                            Spacer()
-                        //                        })
-                        //                        .padding()
-                        //                        .disabled(isButtonDisabled)
-                        //                        .font(.headline)
-                        //                        .foregroundColor(.white)
-                        //                        .background(isButtonDisabled ? Color.gray : Color.pink)
-                        //                        .cornerRadius(8)
-                        //                    } //: VStack
-                        //                    .padding()
                         
                         List {
                             ForEach(items) { item in
@@ -144,11 +106,22 @@ struct ContentView: View {
                         .frame(maxWidth: 640)
                     } //: VStack
                     
+                    if showNewTaskItem {
+                        BlankView()
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                showNewTaskItem = false
+                            }
+                        
+                        NewTaskItemView( showNewTaskItem: $showNewTaskItem)
+                           
+                    }
+                    
                 } //: ZSTACK
                 .onAppear(){
                     UICollectionView.appearance().backgroundColor = .clear
                 }
-                .navigationBarTitle("Daily Tasks", displayMode: .large)
+                .navigationBarTitle("Just Do It!", displayMode: .large)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
@@ -159,11 +132,8 @@ struct ContentView: View {
                 )
                 .background(
                     backgroundGradient.ignoresSafeArea(.all)
-            )
-                if showNewTaskItem {
-                    NewTaskItemView( showNewTaskItem: $showNewTaskItem)
-                        .background(Color.black.ignoresSafeArea(.all).opacity(0.75))
-                }
+                )
+                
             } //: ZSTACK
             
         } //: NAVIGATION
