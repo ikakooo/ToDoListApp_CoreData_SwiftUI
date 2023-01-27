@@ -115,13 +115,14 @@ struct ContentView: View {
                                     Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                                     
                                 }){
-                                    VStack {
-                                        Text(item.task ?? "")
-                                            .font(.headline)
-                                        Text(item.timestamp!, formatter: itemFormatter)
-                                            .font(.footnote)
-                                            .foregroundColor(.gray)
-                                    } //: VStack
+                                    ListRowItemView(item: item)
+//                                    VStack {
+//                                        Text(item.task ?? "")
+//                                            .font(.headline)
+//                                        Text(item.timestamp!, formatter: itemFormatter)
+//                                            .font(.footnote)
+//                                            .foregroundColor(.gray)
+//                                    } //: VStack
                                 }
                                 // .listRowBackground(Color.clear)
                             }

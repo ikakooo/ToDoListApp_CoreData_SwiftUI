@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331CB42D2983F50F005E7F4B /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB42C2983F50F005E7F4B /* ListRowItemView.swift */; };
+		331CB42F2983F793005E7F4B /* ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB42E2983F793005E7F4B /* ToggleStyle.swift */; };
 		334D7B362979592200DA32D3 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B332979592100DA32D3 /* sound-tap.mp3 */; };
 		334D7B372979592200DA32D3 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B342979592100DA32D3 /* sound-ding.mp3 */; };
 		334D7B382979592200DA32D3 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B352979592200DA32D3 /* sound-rise.mp3 */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331CB42C2983F50F005E7F4B /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
+		331CB42E2983F793005E7F4B /* ToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyle.swift; sourceTree = "<group>"; };
 		334D7B332979592100DA32D3 /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		334D7B342979592100DA32D3 /* sound-ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-ding.mp3"; sourceTree = "<group>"; };
 		334D7B352979592200DA32D3 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				33B1E9C8297DEA260093F8DE /* BackgroundImageView.swift */,
 				33808476297EA33F00634E4F /* NewTaskItemView.swift */,
 				33808478297F318900634E4F /* BlankView.swift */,
+				331CB42C2983F50F005E7F4B /* ListRowItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 		334D7B3D29795A0300DA32D3 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				331CB42E2983F793005E7F4B /* ToggleStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -354,6 +360,8 @@
 				33B1E9C4297DCA4B0093F8DE /* ViewColorExtension.swift in Sources */,
 				33B1E9BF297D21D40093F8DE /* HideKeyboardExtension.swift in Sources */,
 				3356E5AD297A718A0024866D /* Constant.swift in Sources */,
+				331CB42F2983F793005E7F4B /* ToggleStyle.swift in Sources */,
+				331CB42D2983F50F005E7F4B /* ListRowItemView.swift in Sources */,
 				33D184402977E72600B9C9A8 /* ToDoListApp.swift in Sources */,
 				33808477297EA33F00634E4F /* NewTaskItemView.swift in Sources */,
 				33D1844C2977E72800B9C9A8 /* ToDoList.xcdatamodeld in Sources */,
