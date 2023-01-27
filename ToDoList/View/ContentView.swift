@@ -135,6 +135,8 @@ struct ContentView: View {
                         .frame(maxWidth: 640)
                     } //: VStack
                     .blur(radius: showNewTaskItem ? 8 : 0, opaque: false)
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeOut(duration: 0.5))
                     
                     if showNewTaskItem {
                         BlankView()
