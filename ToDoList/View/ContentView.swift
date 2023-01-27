@@ -134,6 +134,7 @@ struct ContentView: View {
                         .padding(.vertical, 0)
                         .frame(maxWidth: 640)
                     } //: VStack
+                    .blur(radius: showNewTaskItem ? 8 : 0, opaque: false)
                     
                     if showNewTaskItem {
                         BlankView()
