@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33102A29298558AA001CEB77 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33102A28298558AA001CEB77 /* SoundPlayer.swift */; };
 		331CB42D2983F50F005E7F4B /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB42C2983F50F005E7F4B /* ListRowItemView.swift */; };
 		331CB42F2983F793005E7F4B /* ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB42E2983F793005E7F4B /* ToggleStyle.swift */; };
 		334D7B362979592200DA32D3 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 334D7B332979592100DA32D3 /* sound-tap.mp3 */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33102A28298558AA001CEB77 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		331CB42C2983F50F005E7F4B /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
 		331CB42E2983F793005E7F4B /* ToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyle.swift; sourceTree = "<group>"; };
 		334D7B332979592100DA32D3 /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3356E5AC297A718A0024866D /* Constant.swift */,
+				33102A28298558AA001CEB77 /* SoundPlayer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33102A29298558AA001CEB77 /* SoundPlayer.swift in Sources */,
 				33D184492977E72800B9C9A8 /* Persistence.swift in Sources */,
 				33808479297F318900634E4F /* BlankView.swift in Sources */,
 				33D184422977E72600B9C9A8 /* ContentView.swift in Sources */,

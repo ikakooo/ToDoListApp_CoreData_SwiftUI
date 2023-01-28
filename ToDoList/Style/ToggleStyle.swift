@@ -11,6 +11,14 @@ struct CheckToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
             Button {
                 configuration.isOn.toggle()
+                
+                if configuration.isOn {
+                    playSound(sound: "sound-rise")
+                    feedback.notificationOccurred(.success)
+                } else {
+                    playSound(sound: "sound-tap")
+                }
+                
             } label: {
                 Label {
                     configuration.label

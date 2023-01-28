@@ -72,6 +72,8 @@ struct ContentView: View {
                             // Appearence Button
                             Button(action: {
                                 isDarkMode.toggle()
+                                playSound(sound: "sound-tap")
+                                feedback.notificationOccurred(.success)
                             }, label: {
                                 Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
                                     .resizable()
@@ -85,6 +87,8 @@ struct ContentView: View {
                         Spacer(minLength: 30)
                         Button(action: {
                             showNewTaskItem = true
+                            playSound(sound: "sound-ding")
+                            feedback.notificationOccurred(.success)
                         }, label: {
                             Spacer()
                             HStack {

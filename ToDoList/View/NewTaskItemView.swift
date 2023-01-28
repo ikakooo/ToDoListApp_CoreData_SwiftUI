@@ -53,6 +53,8 @@ struct NewTaskItemView: View {
                     addItem()
                     task = ""
                     hideKeyboard()
+                    playSound(sound: "sound-ding")
+                    feedback.notificationOccurred(.success)
                 }, label: {
                     Spacer()
                     Text("SAVE")
@@ -61,6 +63,11 @@ struct NewTaskItemView: View {
                 })
                 .padding()
                 .disabled(isButtonDisabled)
+                .onTapGesture {
+                    if isButtonDisabled {
+                        playSound(sound: "sound-tap")
+                    }
+                }
                 .foregroundColor(.white)
                 .background(isButtonDisabled ? Color.blue : Color.pink)
                 .cornerRadius(8)
