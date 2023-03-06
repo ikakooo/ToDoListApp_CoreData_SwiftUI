@@ -4,7 +4,7 @@
 workspace "ToDoList.xcodeproj/project.xcworkspace"
 scheme "ToDoList"
 sdk "iphonesimulator"
-device "iPhone 14"
+device "iPhone 13"
 code_coverage true
 xcargs '-parallelizeTargets'
 prelaunch_simulator true
